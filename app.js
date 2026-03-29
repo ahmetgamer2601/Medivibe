@@ -10442,10 +10442,10 @@ function calculateSmartRoute() {
 
 const globalStats = {
     dental: { tr: 600, uk: 3200, usa: 4800, ger: 2500, label: "Diş İmplantı" },
-    hair: { tr: 2200, uk: 14000, usa: 18000, ger: 12000, label: "Saç Ekimi" },
-    gastric: { tr: 4500, uk: 12500, usa: 20000, ger: 13000, label: "Mide Tüpü" },
-    rhino: { tr: 3200, uk: 9000, usa: 13000, ger: 8500, label: "Burun Estetiği" },
-    eye: { tr: 1300, uk: 4800, usa: 6500, ger: 4200, label: "Göz Lazer" }
+    hair: { tr: 3000, uk: 10000, usa: 12000, ger: 12000, label: "Saç Ekimi" },
+    gastric: { tr: 4000, uk: 15000, usa: 20000, ger: 13000, label: "Mide Tüpü" },
+    rhino: { tr: 3500, uk: 8000, usa: 10000, ger: 8500, label: "Burun Estetiği" },
+    eye: { tr: 1800, uk: 4000, usa: 5000, ger: 4200, label: "Göz Lazer" }
 };
 
 function toggleSideMenu() { document.getElementById('sideMenu').classList.toggle('open'); }
