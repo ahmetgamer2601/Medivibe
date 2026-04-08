@@ -20,7 +20,7 @@ const translations = {
         analysisTitle: "📊 TIBBİ ANALİZ VE BAŞARI ORANLARI",
         callBtn: "HEMEN ARA",
         categories: ["CERRAHİ", "TERMAL", "YAŞLI BAKIM", "ENGELLİ BAKIM", "SPA"],
-        countries: { "path3458": "Türkiye", "path3456": "Türkiye", "path5796": "Azerbaycan", "path3898": "Kazakistan", "path3470": "Özbekistan", "tm": "Türkmenistan", "kg": "Kırgızistan", "cy": "KKTC" }
+        countries: { "path3458": "Türkiye", "path3456": "Türkiye", "path5796": "Azerbaycan", "path3898": "Kazakistan", "path3470": "Özbekistan", "tm": "Türkmenistan", "kg": "Kırgızistan", "cy": "KKTC", "cy-": "KKTC" }
     },
     en: { 
         title: "Turkic States Health Tourism Map", 
@@ -32,7 +32,7 @@ const translations = {
         analysisTitle: "📊 MEDICAL ANALYSIS",
         callBtn: "CALL NOW",
         categories: ["SURGERY", "THERMAL", "ELDERLY CARE", "DİSABLED CARE","SPA"],
-        countries: { "path3458": "Turkey", "path3456": "Turkey", "path5796": "Azerbaijan", "path3898": "Kazakhstan", "path3470": "Uzbekistan", "tm": "Turkmenistan", "kg": "Kyrgyzstan", "cy": "TRNC" }
+        countries: { "path3458": "Turkey", "path3456": "Turkey", "path5796": "Azerbaijan", "path3898": "Kazakhstan", "path3470": "Uzbekistan", "tm": "Turkmenistan", "kg": "Kyrgyzstan", "cy": "TRNC","cy-": "KKTC" }
     },
     uz: { 
         title: "Turkiy Davlatlar Sog'liqni Saqlash Xaritasi", 
@@ -44,7 +44,7 @@ const translations = {
         analysisTitle: "📊 TIBBIY TAHLIL",
         callBtn: "QO'NG'IROQ",
         categories: ["JARROHLIK", "TERMAL", "KEKSALAR PARVARISHI", "NOGİRONLARNİ PARVARİSH QİLİSH", "SPA"],
-        countries: { "path3458": "Turkiya", "path3456": "Turkiya", "path5796": "Ozarbayjon", "path3898": "Qozog'iston", "path3470": "O'zbekiston", "tm": "Turkmaniston", "kg": "Qirg'iziston", "cy": "SHK" }
+        countries: { "path3458": "Turkiya", "path3456": "Turkiya", "path5796": "Ozarbayjon", "path3898": "Qozog'iston", "path3470": "O'zbekiston", "tm": "Turkmaniston", "kg": "Qirg'iziston", "cy": "SHK","cy-": "KKTC" }
     }
 };
 
@@ -176,6 +176,108 @@ const countryDetailedData = {
         }
     }
 },
+"KKTC": {
+        meta: {
+            status: "Global Excellence Center in Reproductive Health & Rehabilitation",
+            hubs: ["Lefkoşa (Medikal & Genetik)", "Girne (Wellness & Thalasso)", "Gazimağusa (Fizyo-Rehabilitasyon)", "İskele (Geriatrik Yaşam)"],
+            specialty: "Advanced IVF & PGD, Robotic Neuro-Rehabilitation, Thalassotherapy, Bio-Hacking Detox"
+        },
+        surgery: {
+            img: "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=800", 
+            phone: "+90 392 444 0 938",
+            tr: {
+                hospName: "Near East University Hospital & World IVF Center (International JCI Standards)",
+                shortDesc: "🧬 Dünyanın en esnek ve başarılı üreme sağlığı mevzuatına sahip 'Genetik Üssü'; %85'i aşan klinik başarı oranları ve hibrit ameliyathaneler.",
+                analysis: `
+                <div class="analysis-content">
+                    <h4 style="color:#c0392b;">🔬 Üreme Sağlığı, Genetik Tarama ve Cerrahi Mükemmeliyet</h4>
+                    <p>Kuzey Kıbrıs, özellikle Avrupa ve Orta Doğu'daki kısıtlayıcı yasaların aksine, en modern üreme teknolojilerini yasal ve etik çerçevede sunabilen dünyadaki nadir bölgelerden biridir.</p>
+                    <ul>
+                        <li>👶 <strong>İleri Seviye IVF ve Embriyoloji:</strong> Mikroenjeksiyon (ICSI), IMSI ve Piezo-ICSI gibi tekniklerle döllenme başarısının maksimize edilmesi. Embriyoların 7/24 izlendiği 'Embryoscope+' sistemleri.</li>
+                        <li>🧬 <strong>Kapsamlı Preimplantasyon Genetik Tanı (PGT-A/M/SR):</strong> Sadece sayısal değil, yapısal kromozom bozukluklarının ve tek gen hastalıklarının (Talasemi, SMA, Kistik Fibrozis) embriyo aşamasında %99.9 doğrulukla tespiti.</li>
+                        <li>🤖 <strong>Onkolojik Cerrahi ve Radyoterapi:</strong> Varian TrueBeam STx teknolojisi ile kanserli dokuya milimetrik atış; sağlıklı doku koruma maksimizasyonu.</li>
+                        <li>🦷 <strong>Maksillofasiyal ve Estetik Diş:</strong> Gülüş tasarımı (Smile Design) ve kemik içi implant uygulamalarında 'Same-Day Dentistry' (Aynı gün diş) konseptiyle medikal turistler için zaman tasarrufu.</li>
+                    </ul>
+                    <h4 style="color:#2c3e50;">📊 Operasyonel Analiz</h4>
+                    <p><strong>Stratejik Avantaj:</strong> Kıbrıs, tüp bebek tedavilerinde donasyon ve genetik tarama serbestliği sayesinde "umudu kesilmiş" vakalar için global bir referans noktasıdır. <strong>Maliyet Etkinliği:</strong> ABD ve İngiltere'deki benzer prosedürlere göre %60 daha ekonomik, ancak aynı teknolojik altyapıya sahiptir.</p>
+                </div>`
+            }
+        },
+        thermal: {
+            img: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800",
+            phone: "+90 392 815 01 11", 
+            tr: {
+                hospName: "Merit Royal & Kaya Palazzo Medikal SPA & Thalasso-Healing",
+                shortDesc: "🌊 Isıtılmış Akdeniz suyu (Thalasso) ve mineralize deniz çamuru kürleri; kronik inflamasyon ve eklem dejenerasyonuna karşı 'Doğal Biyohacking'.",
+                analysis: `
+                <div class="analysis-content">
+                    <h4 style="color:#8e44ad;">🧪 Thalassotherapy: Akdeniz'in Moleküler Şifası</h4>
+                    <p>Kıbrıs'ın kristal berraklığındaki deniz suyu, insan kan plazmasına en yakın mineral dengesine sahiptir. Bu benzerlik, 'Thalasso' kürlerini tıbbi bir tedavi haline getirir.</p>
+                    <ul>
+                        <li>🌊 <strong>Dinamik Hidromasaj Havuzları:</strong> 34°C deniz suyu içinde jet akımlarıyla yapılan lenf drenaj masajları; ödem atma ve dolaşım bozukluklarında hızlı sonuç.</li>
+                        <li>🌿 <strong>Algotherapy (Deniz Yosunu):</strong> İyot, magnezyum ve kalsiyum zengini yosun sarmalamalarıyla metabolizma hızlandırma ve selülit/cilt dokusu onarımı.</li>
+                        <li>🌬️ <strong>Kriyoterapi ve Ozon Kabinleri:</strong> Vücudun ekstrem soğuk veya saf oksijenle şoklanarak bağışıklık sisteminin resetlenmesi (Immune System Reset).</li>
+                    </ul>
+                    <p><strong>Manager Notu:</strong> Termal tesisler sadece dinlenme değil, doktor ve diyetisyen kontrolünde 'Zayıflama ve Detoks' protokolleri sunmaktadır.</p>
+                </div>`
+            }
+        },
+        elderly: {
+            img: "https://images.unsplash.com/photo-1581578731522-a2047864146e?q=80&w=800",
+            phone: "+90 392 223 64 64", 
+            tr: {
+                hospName: "Lefke Avrupa Yaşam Köyü & Girne Geriatri Rezidansları",
+                shortDesc: "👴 Düşük nem oranı ve stabil iklim avantajıyla 'Aksakal' konseptli yaşlı bakımı; 365 gün medikal refakat ve sosyal entegrasyon.",
+                analysis: `
+                <div class="analysis-content">
+                    <h4 style="color:#27ae60;">🧠 Bütünsel Geriatri ve 'Blue Zone' Yaşam Modeli</h4>
+                    <p>Dünyada insanların en uzun yaşadığı 'Blue Zone' bölgelerine benzer iklimsel özelliklere sahip olan Kıbrıs, geriatrik rehabilitasyonda bir dünya markası olma yolundadır.</p>
+                    <ul>
+                        <li>🩺 <strong>Kronik Hastalık Yönetimi:</strong> Diyabet, hipertansiyon ve KOAH hastaları için adanın yüksek oksijenli ve düşük nemli havasının sağladığı doğal stabilizasyon.</li>
+                        <li>🥗 <strong>Kıbrıs Tipi Nutrasötik Diyet:</strong> Yerel sızma zeytinyağı, hellim peyniri (protein), taze narenciye ve antioksidan zengini 'Yavaş Gıda' (Slow Food) mutfağı.</li>
+                        <li>🧠 <strong>Bilişsel Koruma:</strong> Alzheimer ve demans hastaları için özel tasarlanmış 'Anı Bahçeleri' ve müzik-sanat terapileriyle zihinsel gerilemenin yavaşlatılması.</li>
+                    </ul>
+                </div>`
+            }
+        },
+        disabled: {
+            img: "https://images.unsplash.com/photo-1576091160550-2173dad99901?q=80&w=800",
+            phone: "+90 392 650 66 66",
+            tr: {
+                hospName: "Kıbrıs Engelsiz Turizm ve Robotik Rehabilitasyon Merkezi",
+                shortDesc: "♿ Nörolojik ve ortopedik engellerde 'Giyilebilir Robotik' (Lokomat) tedavisi; engelsiz plajlar ve medikal turizm entegrasyonu.",
+                analysis: `
+                <div class="analysis-content">
+                    <h4 style="color:#e67e22;">💪 Yoğun Fizik Tedavi ve Fonksiyonel Bağımsızlık</h4>
+                    <p>Kıbrıs, fiziksel engelli bireylerin hem tıbbi tedavi görüp hem de tatil yapabileceği 'Engelsiz Ada' konseptini dünyada en iyi uygulayan bölgelerden biridir.</p>
+                    <ul>
+                        <li>🤖 <strong>Robotik Yürüme Eğitimi (Lokomat):</strong> Omurilik yaralanmaları ve beyin hasarı sonrası yürüme paternini beyne yeniden hatırlatan gelişmiş geri bildirimli sistemler.</li>
+                        <li>🏊 <strong>Aquaterapi (Su İçi Rehabilitasyon):</strong> Yerçekimsiz ortamda kas iskelet sistemini zorlamadan yapılan nöro-musküler güçlendirme seansları.</li>
+                        <li>🚲 <strong>Ergoterapi ve El-Göz Koordinasyonu:</strong> Günlük yaşam aktivitelerinde bağımsızlığı artırmaya yönelik özel uğraşı terapileri.</li>
+                    </ul>
+                    <p><strong>Teknik Detay:</strong> Tesislerin tamamı tekerlekli sandalye ile denize girilebilen rampalara ve asansör sistemlerine sahiptir.</p>
+                </div>`
+            }
+        },
+        spa: {
+            img: "https://images.unsplash.com/photo-1544161515-4af6b1d4640b?q=80&w=800",
+            phone: "+90 392 630 00 00",
+            tr: {
+                hospName: "Elexus & Arkın Palm Beach Wellness & Mind-Body Detox",
+                shortDesc: "🧖‍♂️ Zihinsel detoks ve bütünsel arınma; Uzakdoğu felsefesi ile Akdeniz enerjisinin birleştiği premium SPA protokolleri.",
+                analysis: `
+                <div class="analysis-content">
+                    <h4 style="color:#8e44ad;">🌿 Holistik Sağlık ve Enerji Tıbbı</h4>
+                    <p>Modern şehir hayatının getirdiği 'Burn-Out' (Tükenmişlik) sendromuna karşı, adanın doğal sessizliği ve lüks tesis altyapısı birleştirilmiştir.</p>
+                    <ul>
+                        <li>🧘 <strong>Medikal Yoga ve Mindfulness:</strong> Beşparmak Dağları'nın manzarası eşliğinde, uzman eğitmenlerle yürütülen stres yönetimi kampları.</li>
+                        <li>💆 <strong>Aromaterapi ve Fitoterapi:</strong> Adanın endemik bitkilerinden (kekik, adaçayı, lavanta) elde edilen yağlarla yapılan lenf dolaşımını düzenleyici masajlar.</li>
+                        <li>🍏 <strong>Alkali Beslenme ve Juice Detoks:</strong> Vücut pH dengesini düzenleyen, karaciğer ve bağırsak temizliğini hedefleyen kişiye özel sıvı beslenme programları.</li>
+                    </ul>
+                </div>`
+            }
+        }
+    },
     "KAZAKISTAN": {
     meta: {
         status: "Strategic Central Asian Hub",
@@ -7020,7 +7122,7 @@ const cityDetailedData = {
             }
         },
         spa: {
-            img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=400", // Sivas Termal Otelleri Spa & Hammam Alanı
+            img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400", // Sivas Termal Otelleri Spa & Hammam Alanı
             phone: "0346 258 11 00", // Bilici Termal Hotel & Spa
             tr: {
                 hospName: "Sivas Termal Wellness & Spa Merkezleri",
@@ -9998,104 +10100,24 @@ function runComparison() {
 
     if (!c1Key || !c2Key) return;
 
-    const c1 = cityDetailedData[c1Key];
-    const c2 = cityDetailedData[c2Key];
+    // Şehir veya Ülke verisini çek (Her iki havuzdan da kontrol eder)
+    const c1 = cityDetailedData[c1Key] || countryDetailedData[c1Key];
+    const c2 = cityDetailedData[c2Key] || countryDetailedData[c2Key];
 
-    resultDiv.innerHTML = `
-        <table class="compare-table">
-            <thead>
-                <tr>
-                    <th class="feature-title">ÖZELLİK</th>
-                    <th><div class="compare-city-name">${c1Key}</div></th>
-                    <th><div class="compare-city-name">${c2Key}</div></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="feature-title">🏥 Cerrahi Altyapı & Hastane</td>
-                    <td>
-                        <strong>${c1.surgery.tr.hospName}</strong>
-                        <div class="compare-desc">${c1.surgery.tr.analysis}</div>
-                    </td>
-                    <td>
-                        <strong>${c2.surgery.tr.hospName}</strong>
-                        <div class="compare-desc">${c2.surgery.tr.analysis}</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feature-title">♨️ Termal & Şifa Kaynakları</td>
-                    <td>
-                        <strong>${c1.thermal.tr.hospName}</strong>
-                        <div class="compare-desc">${c1.thermal.tr.analysis}</div>
-                    </td>
-                    <td>
-                        <strong>${c2.thermal.tr.hospName}</strong>
-                        <div class="compare-desc">${c2.thermal.tr.analysis}</div>
-                    </td>
-                </tr>
-             <tr>
-                    <td class="feature-title">👵 Yaşlı Bakım</td>
-                    <td>
-                        <strong>${c1.elderly ? c1.elderly.tr.hospName : '-'}</strong>
-                        <div class="compare-desc">${c1.elderly ? c1.elderly.tr.analysis : '-'}</div>
-                    </td>
-                    <td>
-                        <strong>${c2.elderly ? c2.elderly.tr.hospName : '-'}</strong>
-                        <div class="compare-desc">${c2.elderly ? c2.elderly.tr.analysis : '-'}</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feature-title">♿ Engelli Bakım</td>
-                    <td>
-                        <strong>${c1.disabled ? c1.disabled.tr.hospName : '-'}</strong>
-                        <div class="compare-desc">${c1.disabled ? c1.disabled.tr.analysis : '-'}</div>
-                    </td>
-                    <td>
-                        <strong>${c2.disabled ? c2.disabled.tr.hospName : '-'}</strong>
-                        <div class="compare-desc">${c2.disabled ? c2.disabled.tr.analysis : '-'}</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="feature-title">💆 Wellness & SPA</td>
-                    <td>
-                        <div class="compare-desc">${c1.spa.tr.analysis}</div>
-                    </td>
-                    <td>
-                        <div class="compare-desc">${c2.spa.tr.analysis}</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    `;
-}
+    // Eğer veriler hala gelmediyse fonksiyondan çık
+    if (!c1 || !c2) return;
 
-// Başlat
-populateCompareSelects();
-// Şehirlerin cerrahi gücünü puanlayan yardımcı motor (Statik veri tabanlı)
-const surgicalScores = {
-    "İSTANBUL": 5, "ANKARA": 5, "ANTALYA": 4, "İZMİR": 4, "BURSA": 4, 
-    "KOCAELİ": 4, "ADANA": 3, "SAMSUN": 3, "GAZİANTEP": 3
-    // Diğerleri varsayılan 2 veya 3 dönecek
-};
-
-function getStars(city) {
-    const score = surgicalScores[city] || 3;
-    return "★".repeat(score) + "☆".repeat(5 - score);
-}
-
-function runComparison() {
-    const c1Key = document.getElementById('cityOne').value;
-    const c2Key = document.getElementById('cityTwo').value;
-    const resultDiv = document.getElementById('comparisonResult');
-
-    if (!c1Key || !c2Key) return;
-
-    const c1 = cityDetailedData[c1Key];
-    const c2 = cityDetailedData[c2Key];
-
-    // Öne çıkarma mantığı (Puanı yüksek olanı belirle)
     const score1 = surgicalScores[c1Key] || 3;
     const score2 = surgicalScores[c2Key] || 3;
+
+    // Yardımcı fonksiyon: Veri varsa getir, yoksa 'Hazırlanıyor' dön
+    const getSafeData = (obj, cat, field) => {
+        try {
+            return obj[cat][currentLang][field];
+        } catch (e) {
+            return field === 'hospName' ? "Analiz Bekleniyor" : "Bu kategori için teknik veriler güncellenmektedir.";
+        }
+    };
 
     resultDiv.innerHTML = `
         <div class="compare-actions">
@@ -10122,41 +10144,75 @@ function runComparison() {
             <tbody>
                 <tr>
                     <td class="feature-title">🏥 Cerrahi Yetkinlik</td>
-                    <td class="${score1 > score2 ? 'recommended-cell' : ''}">
-                        <strong>${c1.surgery.tr.hospName}</strong>
-                        <div class="compare-desc">${c1.surgery.tr.analysis}</div>
+                    <td>
+                        <strong>${getSafeData(c1, 'surgery', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c1, 'surgery', 'analysis')}</div>
                     </td>
-                    <td class="${score2 > score1 ? 'recommended-cell' : ''}">
-                        <strong>${c2.surgery.tr.hospName}</strong>
-                        <div class="compare-desc">${c2.surgery.tr.analysis}</div>
+                    <td>
+                        <strong>${getSafeData(c2, 'surgery', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c2, 'surgery', 'analysis')}</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="feature-title">♨️ Termal Destek</td>
                     <td>
-                        <strong>${c1.thermal.tr.hospName}</strong>
-                        <div class="compare-desc">${c1.thermal.tr.analysis}</div>
+                        <strong>${getSafeData(c1, 'thermal', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c1, 'thermal', 'analysis')}</div>
                     </td>
                     <td>
-                        <strong>${c2.thermal.tr.hospName}</strong>
-                        <div class="compare-desc">${c2.thermal.tr.analysis}</div>
+                        <strong>${getSafeData(c2, 'thermal', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c2, 'thermal', 'analysis')}</div>
                     </td>
                 </tr>
                 <tr>
-                    <td class="feature-title">🌿 Rehabilitasyon</td>
+                    <td class="feature-title">👵 Yaşlı Bakım</td>
                     <td>
-                        <strong>${c1.care.tr.hospName}</strong>
-                        <div class="compare-desc">${c1.care.tr.analysis}</div>
+                        <strong>${getSafeData(c1, 'elderly', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c1, 'elderly', 'analysis')}</div>
                     </td>
                     <td>
-                        <strong>${c2.care.tr.hospName}</strong>
-                        <div class="compare-desc">${c2.care.tr.analysis}</div>
+                        <strong>${getSafeData(c2, 'elderly', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c2, 'elderly', 'analysis')}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="feature-title">♿ Engelli Rehabilitasyon</td>
+                    <td>
+                        <strong>${getSafeData(c1, 'disabled', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c1, 'disabled', 'analysis')}</div>
+                    </td>
+                    <td>
+                        <strong>${getSafeData(c2, 'disabled', 'hospName')}</strong>
+                        <div class="compare-desc">${getSafeData(c2, 'disabled', 'analysis')}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="feature-title">💆 Wellness & SPA</td>
+                    <td>
+                        <div class="compare-desc">${getSafeData(c1, 'spa', 'analysis')}</div>
+                    </td>
+                    <td>
+                        <div class="compare-desc">${getSafeData(c2, 'spa', 'analysis')}</div>
                     </td>
                 </tr>
             </tbody>
         </table>
     `;
 }
+// Başlat
+populateCompareSelects();
+// Şehirlerin cerrahi gücünü puanlayan yardımcı motor (Statik veri tabanlı)
+const surgicalScores = {
+    "İSTANBUL": 5, "ANKARA": 5, "ANTALYA": 4, "İZMİR": 4, "BURSA": 4, 
+    "KOCAELİ": 4, "ADANA": 3, "SAMSUN": 3, "GAZİANTEP": 3
+    // Diğerleri varsayılan 2 veya 3 dönecek
+};
+
+function getStars(city) {
+    const score = surgicalScores[city] || 3;
+    return "★".repeat(score) + "☆".repeat(5 - score);
+}
+
 
 // PDF Export Fonksiyonu (Kurumsal çıktı için optimize edilmiş print)
 function exportToPDF() {
@@ -10173,7 +10229,7 @@ function exportToPDF() {
             <br>
             ${printContent}
             <footer style="margin-top:30px; font-size:12px; color:#64748b;">
-                * Bu rapor Türkiye Sağlık Turizmi Bilgi Portalı tarafından otomatik oluşturulmuştur.
+                * Bu rapor Medivibe.Org tarafından otomatik oluşturulmuştur.
             </footer>
         </div>
     `;
@@ -10604,15 +10660,6 @@ accordions.forEach(acc => {
         }
     });
 });
-function toggleCulturePanel() {
-    const overlay = document.getElementById('culture-overlay');
-    // Eğer kapalıysa aç, açıksa kapat
-    if (overlay.style.display === 'flex') {
-        overlay.style.display = 'none';
-    } else {
-        overlay.style.display = 'flex';
-    }
-}
 
 function toggleHighContrast() {
     // Body etiketine 'high-contrast' ismini ekleyip çıkarır
