@@ -3,72 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Şehir Şifa Rehberi | Sosyalfest 2026</title>
-    
-    <link rel="icon" type="image/png" href="logo.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <title>Şehir Şifa Bankası | Envanter</title>
     <link rel="stylesheet" href="rehber.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-elements">
-        <div class="blob"></div>
-        <div class="blob"></div>
-    </div>
-
-    <div class="app-container">
-        <nav class="glass-nav">
-            <div class="nav-content">
-                <div class="nav-left" onclick="window.history.back()">
-                    <div class="logo-wrapper">
-                        <img src="logo.png" alt="Logo" class="main-logo">
-                    </div>
-                    <div class="brand-info">
-                        <span class="brand-name">Şifa Rehberi</span>
-                        <span class="sf-badge">SOSYALFEST</span>
-                    </div>
+    <div class="app-wrapper">
+        <nav class="nav-bar">
+            <div class="nav-container">
+                <div class="brand">
+                    <div class="brand-logo"></div> <span class="brand-name">Şifa Bankası</span>
                 </div>
-                
-                <div class="nav-right">
-                    <div class="lang-selector">
-                        <button class="lang-btn active">TR</button>
-                        <button class="lang-btn">EN</button>
-                    </div>
-                    <button class="accessibility-toggle" title="Erişilebilirlik Modu">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
-                    </button>
-                </div>
+                <button onclick="window.history.back()" class="btn-back">Panale Dön</button>
             </div>
         </nav>
 
-        <header class="hero">
-            <h1 class="hero-title">İyileşme Yolculuğunuzu <br><span>Tasarlayın.</span></h1>
-            <p class="hero-desc">Tedavi sonrası rehabilitasyon sürecinizi şehrin kültürel ve doğal şifasıyla birleştiren akıllı envanter.</p>
-            
-            <div class="search-container">
-                <div class="select-box">
-                    <select id="citySelector">
-                        <option value="" disabled selected>Şehir seçin...</option>
-                        </select>
-                </div>
-                <button id="searchBtn" class="search-btn">
-                    Sorgula
-                </button>
-            </div>
+        <header class="header">
+            <h1>Şehir Envanteri</h1>
+            <p>Türkiye'nin 81 ilindeki rehabilitasyon ve kültür rotaları.</p>
         </header>
 
-        <main id="mainGrid" class="cards-grid hidden">
-            </main>
+        <main class="content">
+            <section class="section-featured">
+                <h2 class="section-title">Öne Çıkan Şifa Şehirleri</h2>
+                <div id="featuredGrid" class="grid-featured">
+                    </div>
+            </section>
 
-        <section id="emptyView" class="empty-view">
-            <div class="empty-content">
-                <div class="orbit-icon">🧭</div>
-                <h3>Keşfetmeye Başlayın</h3>
-                <p>Analiz etmek istediğiniz şehri yukarıdan seçerek iyileşme rotalarını görüntüleyebilirsiniz.</p>
-            </div>
-        </section>
+            <section class="section-others">
+                <h2 class="section-title">Tüm Şehirler</h2>
+                <div id="otherCitiesList" class="city-list">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="detailOverlay" class="overlay hidden">
+        <div class="overlay-content">
+            <button class="close-overlay">Kapat</button>
+            <div id="overlayData"></div>
+        </div>
     </div>
 
     <script src="rehber.js"></script>
