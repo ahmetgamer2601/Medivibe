@@ -1,117 +1,107 @@
 :root {
-    --primary: #0ea5e9;
+    --primary: #0284c7;
     --dark: #0f172a;
-    --slate: #64748b;
-    --gold: #b45309;
-    --gold-bg: #fef3c7;
-    --glass: rgba(255, 255, 255, 0.8);
+    --accent: #10b981;
+    --bg: #f8fafc;
 }
 
 body {
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
     color: var(--dark);
-    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Arka Plan */
-.bg-blur { position: fixed; border-radius: 50%; filter: blur(100px); z-index: -1; opacity: 0.5; }
-.shape-top { width: 500px; height: 500px; background: #bae6fd; top: -200px; left: -100px; }
-.shape-bottom { width: 400px; height: 400px; background: #e0f2fe; bottom: -100px; right: -50px; }
+.blur-bg {
+    position: fixed;
+    top: -10%; left: -10%;
+    width: 120%; height: 120%;
+    background: radial-gradient(circle, #e0f2fe 0%, #f8fafc 100%);
+    z-index: -1;
+}
 
-.main-layout { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.container { max-width: 1100px; margin: 0 auto; padding: 20px; }
 
-/* Navbar */
-.navbar {
+/* Header */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background: var(--glass);
-    backdrop-filter: blur(10px);
+    background: white;
     border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.5);
-    margin-bottom: 50px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
 }
 
-.back-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
+.back-btn {
+    background: var(--dark);
+    color: white; border: none;
+    padding: 10px 20px; border-radius: 12px;
+    cursor: pointer; font-weight: 600;
 }
 
-.back-link:hover { background: var(--dark); color: white; }
+.logo-box h1 { font-size: 1.2rem; margin: 0; }
+.logo-box span { color: var(--primary); }
 
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand h1 { font-size: 1.1rem; margin: 0; letter-spacing: -0.5px; }
-.sf-badge { background: #10b981; color: white; font-size: 0.7rem; padding: 4px 10px; border-radius: 20px; font-weight: bold; }
+.sf-tag {
+    background: var(--accent);
+    color: white; padding: 5px 12px;
+    border-radius: 8px; font-weight: 800; font-size: 0.7rem;
+}
 
-/* Hero */
-.hero-section { text-align: center; margin-bottom: 60px; }
-.hero-section h2 { font-size: 2.8rem; margin-bottom: 10px; color: var(--dark); }
-.hero-section p { color: var(--slate); max-width: 600px; margin: 0 auto 30px; }
-
-.input-group { position: relative; max-width: 450px; margin: 0 auto; }
+/* Search */
+.selection-area { text-align: center; margin-bottom: 50px; }
 .modern-select {
-    width: 100%;
-    padding: 18px 25px;
-    border-radius: 18px;
-    border: 2px solid #e2e8f0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    appearance: none;
-    cursor: pointer;
-    background: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%; max-width: 400px;
+    padding: 15px; border-radius: 12px;
+    border: 2px solid #e2e8f0; font-size: 1rem;
 }
 
-/* Grid & Cards */
-.results-grid {
+/* Grid */
+.places-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
+    padding-bottom: 50px;
 }
-
-.place-card {
-    background: white;
-    border-radius: 24px;
-    padding: 30px;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.place-card.show { opacity: 1; transform: translateY(0); }
-.place-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-
-.tag-row { display: flex; gap: 10px; margin-bottom: 20px; }
-.tag { padding: 6px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-.tag-blue { background: #e0f2fe; color: #0369a1; }
-.tag-green { background: #dcfce7; color: #15803d; }
-
-/* Premium Box (Döviz Girişi) */
-.premium-offer {
-    background: var(--gold-bg);
-    border: 1px dashed var(--gold);
-    padding: 15px;
-    border-radius: 15px;
-    margin: 20px 0;
-    display: flex;
-    gap: 12px;
-}
-
-.premium-offer b { color: var(--gold); font-size: 0.8rem; display: block; margin-bottom: 2px; }
-.premium-offer p { font-size: 0.85rem; color: #92400e; margin: 0; font-weight: 500; }
 
 .hidden { display: none; }
+
+/* Place Card */
+.card {
+    background: white; border-radius: 24px;
+    padding: 25px; border: 1px solid #f1f5f9;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: 0.3s ease;
+    opacity: 0; transform: translateY(20px);
+}
+
+.card.show { opacity: 1; transform: translateY(0); }
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.score-badge { background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; }
+
+.card h3 { margin: 10px 0; color: var(--dark); }
+.card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
+
+.eco-box {
+    background: #ecfdf5; border: 1px solid #10b981;
+    padding: 12px; border-radius: 12px; margin-top: 15px;
+}
+
+.eco-box small { color: #065f46; font-weight: 700; display: block; }
+.eco-box span { font-size: 0.85rem; color: #047857; }
+
+.card-footer {
+    margin-top: 20px; padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.btn-go {
+    background: var(--primary); color: white;
+    border: none; padding: 8px 16px; border-radius: 8px;
+    cursor: pointer; font-weight: 600;
+}
