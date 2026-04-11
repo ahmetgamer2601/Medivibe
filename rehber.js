@@ -1,76 +1,80 @@
-// --- VERİ TABANI (KOD İÇİNDE) ---
-const rotalar = {
+const cityData = {
     "eskisehir": [
         {
-            ad: "Sazova Parkı ve Göleti",
-            tip: "Doğa & Yürüyüş",
-            erisilebilir: true,
-            aciklama: "Tedavi sonrası düşük tempolu yürüyüşler için ideal. Tamamen düz ayak ve tekerlekli sandalye kullanımına uygun geniş yollar.",
-            mesafe: "Şehir Merkezine 5 km"
+            name: "Sazova Bilim Kültür Parkı",
+            type: "Doğa & Rehabilitasyon",
+            access: "♿ Engelsiz Rota",
+            desc: "Tedavi sonrası düşük tempolu yürüyüşler için tasarlanmış, hava kalitesi yüksek ve tamamen düz ayak bir lokasyon.",
+            dist: "Merkezden 10 dk",
+            premium: "Özel VIP Golf Aracı ile Refakatli Tur ve Oksijen Terapisi Desteği"
         },
         {
-            ad: "OMM (Odunpazarı Modern Müze)",
-            tip: "Sanat Terapisi",
-            erisilebilir: true,
-            aciklama: "Sessiz, huzurlu ve zihni dinlendiren ahşap mimari. Asansör altyapısı ile fiziksel engelli hastalar için tam uyumlu.",
-            mesafe: "Şehir Merkezinde"
+            name: "Odunpazarı Modern Müze (OMM)",
+            type: "Sanat Terapisi",
+            access: "♿ Tam Erişilebilir",
+            desc: "Zihinsel yorgunluğu azaltan ödüllü mimari. Ameliyat sonrası sessiz ve huzurlu bir kültürel derinlik sunar.",
+            dist: "Tarihi Bölge",
+            premium: "Kişiye Özel Sanat Danışmanı ve Sessiz VIP Dinlenme Odası Kullanımı"
         }
     ],
     "adana": [
         {
-            ad: "Seyhan Nehri Kıyısı",
-            tip: "Huzur Rotaları",
-            erisilebilir: true,
-            aciklama: "Narenciye kokuları eşliğinde, şehir gürültüsünden uzak, tekerlekli sandalye dostu sahil bandı.",
-            mesafe: "Merkez"
+            name: "Merkez Park & Seyhan Kıyısı",
+            type: "Huzur Yolu",
+            access: "♿ Engelsiz Rota",
+            desc: "Nehir havasının iyileştirici gücü. Narenciye ağaçları arasında, tekerlekli sandalye dostu geniş peyzaj alanları.",
+            dist: "Şehir Merkezi",
+            premium: "Yabancı Dil Bilen Sağlık Asistanı ve Nehir Üzerinde Özel İyileşme Turu"
         }
     ]
-    // Buraya istediğin kadar şehir ekleyebilirsin.
 };
 
-// --- İŞLEVLER ---
-const citySelector = document.getElementById('citySelector');
-const placesGrid = document.getElementById('placesGrid');
+const selector = document.getElementById('citySelector');
+const grid = document.getElementById('resultContainer');
 
-citySelector.addEventListener('change', (e) => {
-    const secilenSehir = e.target.value;
-    const yerler = rotalar[secilenSehir];
+selector.addEventListener('change', (e) => {
+    const city = e.target.value;
+    const places = cityData[city];
 
-    // Grid'i temizle ve görünür yap
-    placesGrid.innerHTML = '';
-    placesGrid.classList.remove('hidden');
+    grid.innerHTML = "";
+    grid.classList.remove('hidden');
 
-    if (yerler) {
-        yerler.forEach((yer, index) => {
-            // Erişilebilirlik tag'i belirleme
-            const erisimTag = yer.erisilebilir ? '<span class="tag-access">♿ Engelsiz Rota</span>' : '';
-
-            // Kart HTML'ini oluştur
-            const cardHTML = `
-                <div class="place-card">
-                    <div class="card-tags">
-                        ${erisimTag}
-                        <span class="tag-type">📍 ${yer.tip}</span>
-                    </div>
-                    <h3>${yer.ad}</h3>
-                    <p>${yer.aciklama}</p>
-                    <div class="card-action">
-                        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">🚗 ${yer.mesafe}</span>
-                        <button class="btn-route">Yol Tarifi Al</button>
+    if (places) {
+        places.forEach((p, index) => {
+            const card = document.createElement('div');
+            card.className = 'place-card';
+            card.innerHTML = `
+                <div class="tag-row">
+                    <span class="tag tag-blue">📍 ${p.type}</span>
+                    <span class="tag tag-green">${p.access}</span>
+                </div>
+                <h3>${p.name}</h3>
+                <p>${p.desc}</p>
+                
+                <div class="premium-offer">
+                    <span style="font-size:1.5rem">💎</span>
+                    <div>
+                        <b>PREMIUM SAĞLIK HİZMETİ</b>
+                        <p>${p.premium}</p>
                     </div>
                 </div>
-            `;
-            
-            // Kartı ekrana bas
-            placesGrid.innerHTML += cardHTML;
-        });
 
-        // Kartlara sırayla animasyon ekle (Jüri bu efekte bayılır)
-        const cards = document.querySelectorAll('.place-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('show');
-            }, index * 150); // Her kart 150ms arayla çıkar
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px; border-top:1px solid #f1f5f9; pt:15px">
+                    <span style="font-size:0.8rem; color:#94a3b8; font-weight:700">📍 ${p.dist}</span>
+                    <button style="background:var(--dark); color:white; border:none; padding:8px 15px; border-radius:10px; cursor:pointer; font-weight:600">Keşfet</button>
+                </div>
+            `;
+            grid.appendChild(card);
+            setTimeout(() => card.classList.add('show'), index * 150);
         });
+    } else {
+        // FAZ 2 / VİZYON KARTI (81 il için hayat kurtarır)
+        grid.innerHTML = `
+            <div class="place-card show" style="grid-column: 1 / -1; text-align:center; padding:50px;">
+                <h1 style="font-size:3rem">🚀</h1>
+                <h3>Analiz Devam Ediyor (Faz 2)</h3>
+                <p style="max-width:500px; margin: 0 auto">Bu şehrimiz için medikal turizm ve kültürel entegrasyon analizleri uluslararası standartlarda yürütülmektedir. Çok yakında erişime açılacaktır.</p>
+            </div>
+        `;
     }
 });
