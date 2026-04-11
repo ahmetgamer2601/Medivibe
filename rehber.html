@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kültürel İyileşme Rehberi</title>
+    <link rel="stylesheet" href="rehber.css">
+</head>
+<body>
+
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <div class="guide-wrapper">
+        <header class="glass-header">
+            <button onclick="window.history.back()" class="btn-back">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Geri Dön
+            </button>
+            <div class="header-title">
+                <h2>Şehir Şifa Rehberi</h2>
+                <span class="badge-pro">Sosyalfest Özel</span>
+            </div>
+        </header>
+
+        <section class="search-hero">
+            <h1>İyileşme Rotanızı Seçin</h1>
+            <p>Tedavi sonrası ruhunuzu dinlendirecek, erişilebilir ve güvenli lokasyonları keşfedin.</p>
+            
+            <div class="custom-select-wrapper">
+                <select id="citySelector" class="glass-select">
+                    <option value="" disabled selected>Gideceğiniz şehri seçiniz...</option>
+                    <option value="eskisehir">Eskişehir</option>
+                    <option value="adana">Adana</option>
+                    <option value="istanbul">İstanbul</option>
+                </select>
+                <div class="select-icon">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+            </div>
+        </section>
+
+        <main id="placesGrid" class="places-grid hidden">
+            </main>
+    </div>
+
+    <script src="rehber.js"></script>
+</body>
+</html>
