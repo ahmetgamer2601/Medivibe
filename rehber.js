@@ -1,89 +1,142 @@
-const sehirData = {
-    "ESKİŞEHİR": [
+/**
+ * ŞEHİR ŞİFA BANKASI - ANA VERİ SETİ
+ * Sosyalfest 2026 Proje Altyapısı
+ */
+
+const sehirEnvanteri = {
+    "eskisehir": [
         {
-            ad: "Odunpazarı Butik Atölyeler",
-            tip: "Kültür & Terapi",
-            puan: "9.8/10",
-            desc: "Tedavi sonrası zihni boşaltmak için cam ve lületaşı atölyelerinde vakit geçirebilir, yerel ustaların el emeği ürünlerini inceleyebilirsiniz.",
-            eco: "Doğrudan Yerel Zanaatkar Desteği (Cam ve Lületaşı Sanatı)",
-            link: "https://www.google.com/maps/search/Odunpazarı+Atölyeler"
+            ad: "Odunpazarı Cam Sanatları Merkezi",
+            kat: "Motor Beceri & Terapi",
+            skor: 9.8,
+            desc: "Sıcak cam üfleme ve lületaşı işleme atölyeleri. Ameliyat sonrası odaklanma ve ince motor beceri rehabilitasyonu için birebir.",
+            etki: 94,
+            mesafe: "Tarihi Bölge",
+            erisim: "Tam Erişilebilir ♿",
+            sakinlik: "Orta",
+            resim: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?auto=format&fit=crop&w=500"
         },
         {
-            ad: "Porsuk Çayı Gondol Turu",
-            tip: "Huzur Rotası",
-            puan: "9.5/10",
-            desc: "Adalar bölgesinde suyun sakinleştirici gücüyle kafa dağıtabilir, Venedik havasında dinlendirici bir tur yapabilirsiniz.",
-            eco: "Belediye ve Yerel İşletme Entegrasyonu",
-            link: "https://www.google.com/maps/search/Porsuk+Gondol"
+            ad: "Sazova Bilim ve Kültür Parkı",
+            kat: "Hafif Yürüyüş & Oksijen",
+            skor: 9.5,
+            desc: "Düşük tempolu yürüyüş rotaları, gölet çevresi negatif iyon yoğunluğu. Solunum ve fizik tedavi süreci için ideal açık hava alanı.",
+            etki: 88,
+            mesafe: "Merkezden 15 dk",
+            erisim: "Düz Ayak Rota ♿",
+            sakinlik: "Yüksek",
+            resim: "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=500"
         }
     ],
-    "ANTALYA": [
+    "istanbul": [
         {
-            ad: "Kaleiçi Tarihi Çarşı",
-            tip: "Gastronomi & Alışveriş",
-            puan: "9.7/10",
-            desc: "Dar sokaklarda butik kafeler ve antika dükkanları arasında kaybolabilir, turunç reçeli gibi yöresel lezzetlerle moral depolayabilirsiniz.",
-            eco: "KOBİ ve Butik Otel Ekonomisine Katkı",
-            link: "https://.google.com/maps/search/Kaleiçi+Antalya"
+            ad: "Kuzguncuk Bostanı ve Sanat Evleri",
+            kat: "Psikolojik Dinlenme",
+            skor: 9.2,
+            desc: "Mahalle kültürünün merkezinde dijital detoks ve doğa terapisi. Sosyal hayata kontrollü dönüş için en huzurlu liman.",
+            etki: 96,
+            mesafe: "Üsküdar Sahil",
+            erisim: "Kısmen Erişilebilir",
+            sakinlik: "Ultra Yüksek",
+            resim: "https://images.unsplash.com/photo-1543833078-682126fb9683?auto=format&fit=crop&w=500"
         }
     ],
-    "İSTANBUL": [
+    "antalya": [
         {
-            ad: "Kuzguncuk Bostanı ve Kafeler",
-            tip: "Nostalji & Huzur",
-            puan: "9.4/10",
-            desc: "Mahalle kültürünün yaşadığı, asırlık çınarlar altında çay içip iyileşme sürecinde sosyal hayata karışabileceğiniz en sakin nokta.",
-            eco: "Mahalle Esnafı ve Yerel Tarım Desteği",
-            link: "https://www.google.com/maps/search/Kuzguncuk"
+            ad: "Kaleiçi Butik Dokuma Atölyeleri",
+            kat: "Geleneksel Terapi",
+            skor: 9.6,
+            desc: "Tarihi doku içinde el dokuması ve yerel el sanatları. Yerel ekonomiyi destekleyen, hasta odaklı yavaşlatılmış yaşam rotası.",
+            etki: 91,
+            mesafe: "Eski Şehir",
+            erisim: "Tam Erişilebilir ♿",
+            sakinlik: "Orta",
+            resim: "https://images.unsplash.com/photo-15420518418c7-5949a7023cc3?auto=format&fit=crop&w=500"
         }
     ]
-    // Diğer şehirler için varsayılan bir "Faz 2" mesajı JS ile basılacak
+    // 81 ilin diğerleri otomatik olarak "Faz 2" fonksiyonuna düşecek.
 };
 
-const citySelect = document.getElementById('citySelect');
-const output = document.getElementById('output');
+// --- DOM ELEMENTLERİ ---
+const citySelector = document.getElementById('citySelector');
+const mainGrid = document.getElementById('mainGrid');
+const emptyState = document.getElementById('emptyState');
 
-citySelect.addEventListener('change', (e) => {
-    const cityName = e.target.value;
-    const places = sehirData[cityName];
+// --- ANA FONKSİYON: ANALİZİ BAŞLAT ---
+function analiziBaslat() {
+    const secilenSehir = citySelector.value;
+    const yerler = sehirEnvanteri[secilenSehir];
 
-    output.innerHTML = "";
-    output.classList.remove('hidden');
+    // Önce gridi temizle ve görünür yap
+    mainGrid.innerHTML = "";
+    
+    if (yerler && yerler.length > 0) {
+        // Veri varsa
+        emptyState.classList.add('hidden');
+        mainGrid.classList.remove('hidden');
 
-    if (places) {
-        places.forEach((p, index) => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <div class="card-header">
-                    <span class="score-badge">İyileşme: ${p.puan}</span>
-                    <span style="font-size:0.7rem; font-weight:bold; color:#64748b">📍 ${p.tip}</span>
-                </div>
-                <h3>${p.ad}</h3>
-                <p>${p.desc}</p>
-                <div class="eco-box">
-                    <small>💎 EKONOMİK KATKI</small>
-                    <span>${p.eco}</span>
-                </div>
-                <div class="card-footer">
-                    <span style="font-size:0.8rem; color:#94a3b8">♿ Engelsiz Rota</span>
-                    <button class="btn-go" onclick="window.open('${p.link}')">Haritada Gör</button>
+        yerler.forEach((yer, index) => {
+            const cardHTML = `
+                <div class="rota-card" style="animation-delay: ${index * 0.2}s">
+                    <div class="card-status">
+                        <span class="status-badge accessibility-high">${yer.erisim}</span>
+                        <span class="status-badge impact-high">💎 Yerel Kalkınma: %${yer.etki}</span>
+                    </div>
+                    
+                    <div class="card-image-area">
+                        <img src="${yer.resim}" alt="${yer.ad}">
+                        <div class="healing-score">
+                            <span class="score-val">${yer.skor}</span>
+                            <span class="score-label">Şifa Skoru</span>
+                        </div>
+                    </div>
+
+                    <div class="card-content">
+                        <div class="cat-tag">${yer.kat.toUpperCase()}</div>
+                        <h3>${yer.ad}</h3>
+                        <p>${yer.desc}</p>
+                        
+                        <div class="card-metrics">
+                            <div class="metric">
+                                <small>Mesafe</small>
+                                <span>${yer.mesafe}</span>
+                            </div>
+                            <div class="metric">
+                                <small>Sakinlik</small>
+                                <span>${yer.sakinlik}</span>
+                            </div>
+                        </div>
+
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="alert('Detaylı Rota Analizi Hazırlanıyor...')">Detaylı Analiz</button>
+                            <button class="btn-route">Yol Tarifi</button>
+                        </div>
+                    </div>
                 </div>
             `;
-            output.appendChild(card);
-            setTimeout(() => card.classList.add('show'), index * 100);
+            mainGrid.insertAdjacentHTML('beforeend', cardHTML);
         });
+
+        // Kartlara "show" class'ı ekleyerek animasyonu tetikle
+        setTimeout(() => {
+            document.querySelectorAll('.rota-card').forEach(c => c.classList.add('show'));
+        }, 50);
+
     } else {
-        // VERİSİ OLMAYAN ŞEHİRLER İÇİN ŞIK BİR "YOLDA" MESAJI
-        output.innerHTML = `
-            <div class="card show" style="grid-column: 1 / -1; text-align:center; padding:60px;">
-                <h1 style="font-size:4rem; margin:0">🏔️</h1>
-                <h2>${cityName} Şifa Haritası Hazırlanıyor</h2>
-                <p>Bu şehrimiz için "Yerel Kalkınma ve Medikal Turizm" envanter çalışmaları saha ekiplerimizce yürütülmektedir. Sosyalfest 2026 Vizyonu kapsamında tüm iller dahil edilecektir.</p>
-                <div class="eco-box" style="display:inline-block; margin-top:20px;">
-                    <small>DURUM: FAZ 2 ANALİZ AŞAMASI</small>
-                </div>
-            </div>
+        // Veri yoksa Faz 2 Vizyonunu göster
+        mainGrid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        emptyState.innerHTML = `
+            <div class="empty-icon">🌍</div>
+            <h3>${secilenSehir.toUpperCase()} İçin Saha Analizi Sürüyor</h3>
+            <p>Bu şehrimizin yöresel şifa envanteri ve yerel zanaat rotaları Sosyalfest 2026 Faz 2 kapsamında dijitalleştirilmektedir.</p>
+            <div style="margin-top:20px; color:var(--primary); font-weight:700; font-size:0.8rem; letter-spacing:1px;">DURUM: %45 TAMAMLANDI</div>
         `;
     }
-});
+}
+
+// --- EVENT LISTENERS ---
+citySelector.addEventListener('change', analiziBaslat);
+
+// Arama butonuna tıklandığında da çalışsın
+document.querySelector('.btn-search').addEventListener('click', analiziBaslat);
