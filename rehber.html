@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kültürel İyileşme Rehberi</title>
+    <title>Sağlık Turizmi | Kültürel İyileşme Rehberi</title>
     <link rel="stylesheet" href="rehber.css">
 </head>
 <body>
+    <div class="bg-blur shape-top"></div>
+    <div class="bg-blur shape-bottom"></div>
 
-    <div class="bg-shape shape-1"></div>
-    <div class="bg-shape shape-2"></div>
-
-    <div class="guide-wrapper">
-        <header class="glass-header">
-            <button onclick="window.history.back()" class="btn-back">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div class="main-layout">
+        <header class="navbar">
+            <button onclick="window.history.back()" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 Geri Dön
             </button>
-            <div class="header-title">
-                <h2>Şehir Şifa Rehberi</h2>
-                <span class="badge-pro">Sosyalfest Özel</span>
+            <div class="brand">
+                <span class="pulse-icon"></span>
+                <h1>Şehir Şifa Bankası</h1>
+                <span class="sf-badge">Sosyalfest 2026</span>
             </div>
         </header>
 
-        <section class="search-hero">
-            <h1>İyileşme Rotanızı Seçin</h1>
-            <p>Tedavi sonrası ruhunuzu dinlendirecek, erişilebilir ve güvenli lokasyonları keşfedin.</p>
+        <section class="hero-section">
+            <h2 class="animate-text">İyileşme Rotanızı Keşfedin</h2>
+            <p>Tedavi sonrası rehabilitasyon sürecini kültürel mirasla birleştiren akıllı rehber sistemi.</p>
             
-            <div class="custom-select-wrapper">
-                <select id="citySelector" class="glass-select">
-                    <option value="" disabled selected>Gideceğiniz şehri seçiniz...</option>
+            <div class="input-group">
+                <select id="citySelector" class="modern-select">
+                    <option value="" disabled selected>Şehir seçerek analizi başlatın...</option>
                     <option value="eskisehir">Eskişehir</option>
                     <option value="adana">Adana</option>
                     <option value="istanbul">İstanbul</option>
-                </select>
-                <div class="select-icon">
-                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                </div>
+                    <option value="antalya">Antalya</option>
+                    <option value="ankara">Ankara</option>
+                    </select>
+                <div class="select-arrow"></div>
             </div>
         </section>
 
-        <main id="placesGrid" class="places-grid hidden">
+        <main id="resultContainer" class="results-grid hidden">
             </main>
     </div>
 
