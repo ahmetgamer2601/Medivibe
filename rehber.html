@@ -3,44 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sağlık Turizmi | Kültürel İyileşme Rehberi</title>
+    <title>Şehir Şifa Envanteri | Sosyalfest 2026</title>
     <link rel="stylesheet" href="rehber.css">
 </head>
 <body>
-    <div class="bg-blur shape-top"></div>
-    <div class="bg-blur shape-bottom"></div>
-
-    <div class="main-layout">
-        <header class="navbar">
-            <button onclick="window.history.back()" class="back-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Geri Dön
-            </button>
-            <div class="brand">
-                <span class="pulse-icon"></span>
-                <h1>Şehir Şifa Bankası</h1>
-                <span class="sf-badge">Sosyalfest 2026</span>
+    <div class="blur-bg"></div>
+    
+    <div class="container">
+        <header class="main-header">
+            <button onclick="window.history.back()" class="back-btn">← Panale Dön</button>
+            <div class="logo-box">
+                <div class="pulse"></div>
+                <h1>Şehir Şifa <span>Rehberi</span></h1>
             </div>
+            <div class="sf-tag">SOSYALFEST ADAYI</div>
         </header>
 
-        <section class="hero-section">
-            <h2 class="animate-text">İyileşme Rotanızı Keşfedin</h2>
-            <p>Tedavi sonrası rehabilitasyon sürecini kültürel mirasla birleştiren akıllı rehber sistemi.</p>
+        <section class="selection-area">
+            <h2>İyileşme Rotanızı Belirleyin</h2>
+            <p>Tedavi sonrası yerel ekonomiyle bütünleşen, yüksek erişilebilir rotalar.</p>
             
-            <div class="input-group">
-                <select id="citySelector" class="modern-select">
-                    <option value="" disabled selected>Şehir seçerek analizi başlatın...</option>
-                    <option value="eskisehir">Eskişehir</option>
-                    <option value="adana">Adana</option>
-                    <option value="istanbul">İstanbul</option>
-                    <option value="antalya">Antalya</option>
-                    <option value="ankara">Ankara</option>
-                    </select>
-                <div class="select-arrow"></div>
+            <div class="search-box">
+                <select id="citySelect">
+                    <option value="" disabled selected>81 İlden Birini Seçin...</option>
+                    <option value="ADANA">Adana</option>
+                    <option value="ADIYAMAN">Adıyaman</option>
+                    <option value="AFYONKARAHİSAR">Afyonkarahisar</option>
+                    <option value="AĞRI">Ağrı</option>
+                    <option value="AMASYA">Amasya</option>
+                    <option value="ANKARA">Ankara</option>
+                    <option value="ANTALYA">Antalya</option>
+                    <option value="ARTVİN">Artvin</option>
+                    <option value="AYDIN">Aydın</option>
+                    <option value="BALIKESİR">Balıkesir</option>
+                    <option value="BİLECİK">Bilecik</option>
+                    <option value="BİNGÖL">Bingöl</option>
+                    <option value="BİTLİS">Bitlis</option>
+                    <option value="BOLU">Bolu</option>
+                    <option value="BURDUR">Burdur</option>
+                    <option value="BURSA">Bursa</option>
+                    <option value="ÇANAKKALE">Çanakkale</option>
+                    <option value="ÇANKIRI">Çankırı</option>
+                    <option value="ÇORUM">Çorum</option>
+                    <option value="DENİZLİ">Denizli</option>
+                    <option value="DİYARBAKIR">Diyarbakır</option>
+                    <option value="EDİRNE">Edirne</option>
+                    <option value="ELAZIĞ">Elazığ</option>
+                    <option value="ERZİNCAN">Erzincan</option>
+                    <option value="ERZURUM">Erzurum</option>
+                    <option value="ESKİŞEHİR">Eskişehir</option>
+                    <option value="GAZİANTEP">Gaziantep</option>
+                    <option value="GİRESUN">Giresun</option>
+                    <option value="GÜMÜŞHANE">Gümüşhane</option>
+                    <option value="HAKKARİ">Hakkari</option>
+                    <option value="HATAY">Hatay</option>
+                    <option value="ISPARTA">Isparta</option>
+                    <option value="MERSİN">Mersin</option>
+                    <option value="İSTANBUL">İstanbul</option>
+                    <option value="İZMİR">İzmir</option>
+                    <option value="KARS">Kars</option>
+                    <option value="KASTAMONU">Kastamonu</option>
+                    <option value="KAYSERİ">Kayseri</option>
+                    <option value="KIRKLARELİ">Kırklareli</option>
+                    <option value="KIRŞEHİR">Kırşehir</option>
+                    <option value="KOCAELİ">Kocaeli</option>
+                    <option value="KONYA">Konya</option>
+                    <option value="KÜTAHYA">Kütahya</option>
+                    <option value="MALATYA">Malatya</option>
+                    <option value="MANİSA">Manisa</option>
+                    <option value="KAHRAMANMARAŞ">Kahramanmaraş</option>
+                    <option value="MARDİN">Mardin</option>
+                    <option value="MUĞLA">Muğla</option>
+                    <option value="MUŞ">Muş</option>
+                    <option value="NEVŞEHİR">Nevşehir</option>
+                    <option value="NİĞDE">Niğde</option>
+                    <option value="ORDU">Ordu</option>
+                    <option value="RIZE">Rize</option>
+                    <option value="SAKARYA">Sakarya</option>
+                    <option value="SAMSUN">Samsun</option>
+                    <option value="SİİRT">Siirt</option>
+                    <option value="SİNOP">Sinop</option>
+                    <option value="SİVAS">Sivas</option>
+                    <option value="TEKİRDAĞ">Tekirdağ</option>
+                    <option value="TOKAT">Tokat</option>
+                    <option value="TRABZON">Trabzon</option>
+                    <option value="TUNCELİ">Tunceli</option>
+                    <option value="ŞANLIURFA">Şanlıurfa</option>
+                    <option value="UŞAK">Uşak</option>
+                    <option value="VAN">Van</option>
+                    <option value="YOZGAT">Yozgat</option>
+                    <option value="ZONGULDAK">Zonguldak</option>
+                    <option value="AKSARAY">Aksaray</option>
+                    <option value="BAYBURT">Bayburt</option>
+                    <option value="KARAMAN">Karaman</option>
+                    <option value="KIRIKKALE">Kırıkkale</option>
+                    <option value="BATMAN">Batman</option>
+                    <option value="ŞIRNAK">Şırnak</option>
+                    <option value="BARTIN">Bartın</option>
+                    <option value="ARDAHAN">Ardahan</option>
+                    <option value="IĞDIR">Iğdır</option>
+                    <option value="YALOVA">Yalova</option>
+                    <option value="KARABÜK">Karabük</option>
+                    <option value="KİLİS">Kilis</option>
+                    <option value="OSMANİYE">Osmaniye</option>
+                    <option value="DÜZCE">Düzce</option>
+                </select>
             </div>
         </section>
 
-        <main id="resultContainer" class="results-grid hidden">
+        <main id="output" class="places-grid hidden">
             </main>
     </div>
 
