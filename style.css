@@ -1778,7 +1778,7 @@ body.high-contrast #accessBtn {
     opacity: 0;
     transform: translateX(-20px); /* Hafif soldan sağa giriş */
     pointer-events: none;
-    animation: slideInRight 12s infinite; /* 12 saniyelik şık döngü */
+    animation: slideInRight 25s infinite; /* 12 saniyelik şık döngü */
 }
 
 .card-tag {
@@ -1830,3 +1830,26 @@ body.high-contrast #accessBtn {
     25% { transform: rotate(-20deg); }
     75% { transform: rotate(20deg); }
 }
+
+
+
+@keyframes slideInRight {
+    /* 0'dan %5'e kadar: Görünmezden yavaşça belirir */
+    0%, 5% { 
+        opacity: 0; 
+        transform: translateX(-20px); 
+    }
+    
+    /* %10'dan %30'a kadar: Ekranda sabit ve görünür durur (Yazının okunma süresi) */
+    10%, 30% { 
+        opacity: 1; 
+        transform: translateX(0); 
+    }
+    
+    /* %35'ten %100'e kadar: Kaybolur ve döngü bitene kadar gizli kalır */
+    35%, 100% { 
+        opacity: 0; 
+        transform: translateX(10px); 
+    }
+}
+
